@@ -1,16 +1,9 @@
-# React + Vite
+# Universo Neuroatípico
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## O que é?
 
-Currently, two official plugins are available:
+Site/app mobile-first desenvolvido em React.js (Vite) + Supabase para crianças neurodivergentes cujo objetivo é ensiná-las a entender e lidar melhor com sua neurodiversidade. Conta com indicação de jogos e textos informativos. Projeto profissional desenvolvido por mim atendendo as necessidades das clientes.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tecnologias
+1. React.js + Vite
+2. Supabase 

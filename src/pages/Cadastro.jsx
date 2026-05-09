@@ -351,7 +351,7 @@ const Cadastro = () => {
 
         cardNeuroNome: {
             fontFamily: "'Cal Sans', sans-serif",
-            fontSize: '18px',
+            fontSize: '16px',
             color: 'white',
             textAlign: 'center',
             wordBreak: 'break-word'

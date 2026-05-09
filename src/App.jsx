@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import { supabase, AuthProvider } from './contexts/AuthContext';
+
+import MainLayout from './pages/MainLayout';
 import Apresentacao from './pages/Apresentacao';
 import Login from './pages/Login';
 import Cadastro from './pages/Cadastro';
+import Home from './pages/Home';
+import ConhecendoNeurodivergencia from './pages/ConhecendoNeurodivergencia';
+import Atividades from './pages/Atividades';
+import Configuracoes from './pages/Configuracoes';
 
 const AppRoutes = () => {
 
@@ -97,10 +103,20 @@ function App() {
       <AuthProvider>
         
         <Routes>
+          
           <Route path="/apresentacao" element={<Apresentacao />} />
           <Route path="/login" element={<Login />} />
           <Route path="/cadastro" element={<Cadastro />} />
-          <Route path="/" element={<AppRoutes />} />
+
+          <Route element={<MainLayout />}>
+            <Route path="/home" element={<Home />} />
+            <Route path="/conhecendo-neurodivergencia" element={<ConhecendoNeurodivergencia />} />
+            <Route path="/atividades" element={<Atividades />} />
+            <Route path="/configuracoes" element={<Configuracoes />} />
+          </Route>
+
+          <Route path="/" element={<Navigate to="/apresentacao" replace />} />
+          
         </Routes>
 
       </AuthProvider>

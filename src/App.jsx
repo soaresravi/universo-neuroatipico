@@ -7,6 +7,7 @@ import Apresentacao from './pages/Apresentacao';
 import Login from './pages/Login';
 import Cadastro from './pages/Cadastro';
 import Home from './pages/Home';
+import Trilha from './pages/Trilha';
 import ConhecendoNeurodivergencia from './pages/ConhecendoNeurodivergencia';
 import Atividades from './pages/Atividades';
 import Configuracoes from './pages/Configuracoes';
@@ -115,6 +116,8 @@ function App() {
             <Route path="/configuracoes" element={<Configuracoes />} />
           </Route>
 
+          <Route path="/trilha/:id" element={<Trilha />} />
+          
           <Route path="/" element={<Navigate to="/apresentacao" replace />} />
           
         </Routes>

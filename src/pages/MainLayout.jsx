@@ -13,7 +13,7 @@ const MainLayout = () => {
 
     const tabs = [
         { id: 'home', nome: 'Tela inicial', icon: teaImg, rota: '/home' },
-        { id: 'conhecendo-neurodivergencia', nome: 'Conhecendo minha neurodivergência', icon: livroIcon, rota: '/conhecendo-neurodivergencia' },
+        { id: 'conhecendo-neurodivergencia', nome: 'Conhecendo minha neurodivergência', icon: livroIcon, rota: '/selecionar-neurodivergencia' },
         { id: 'atividades', nome: 'Atividades', icon: dadosIcon, rota: '/atividades' },
         { id: 'configuracoes', nome: 'Configurações', icon: configIcon, rota: '/configuracoes' }
     ];

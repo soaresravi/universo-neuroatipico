@@ -9,7 +9,9 @@ import Cadastro from './pages/Cadastro';
 import Home from './pages/Home';
 import Trilha from './pages/Trilha';
 import ConhecendoNeurodivergencia from './pages/ConhecendoNeurodivergencia';
+import SelecionarNeurodivergencia from './pages/SelecionarNeurodivergencia';
 import Atividades from './pages/Atividades';
+import Dicas from './pages/Dicas';
 import Configuracoes from './pages/Configuracoes';
 
 const AppRoutes = () => {
@@ -111,12 +113,14 @@ function App() {
 
           <Route element={<MainLayout />}>
             <Route path="/home" element={<Home />} />
-            <Route path="/conhecendo-neurodivergencia" element={<ConhecendoNeurodivergencia />} />
+            <Route path="/selecionar-neurodivergencia" element={<SelecionarNeurodivergencia /> } />
             <Route path="/atividades" element={<Atividades />} />
             <Route path="/configuracoes" element={<Configuracoes />} />
           </Route>
 
           <Route path="/trilha/:id" element={<Trilha />} />
+          <Route path="/conhecendo-neurodivergencia" element={<ConhecendoNeurodivergencia />} />
+          <Route path="/dicas" element={<Dicas /> } />
           
           <Route path="/" element={<Navigate to="/apresentacao" replace />} />
           

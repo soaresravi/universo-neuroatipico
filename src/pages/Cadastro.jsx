@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { X, Undo2 } from 'lucide-react';
+import { X, Undo2, AlertTriangle } from 'lucide-react';
 
 import { supabase, useAuth } from '../contexts/AuthContext';
 import fundoCadastro from '../assets/fundo-cadastro.jpeg';
@@ -38,6 +38,7 @@ const Cadastro = () => {
     const navigate = useNavigate();
     const { login } = useAuth();
     const [etapaAtual, setEtapaAtual] = useState(0);
+    const [showExitModal, setShowExitModal] = useState(false);
     
     const [dados, setDados] = useState({
         nome: '',
@@ -157,6 +158,11 @@ const Cadastro = () => {
         });
     };
 
+    const handleConfirmExit = () => {
+        setShowExitModal(false);
+        navigate('/apresentacao');
+    };
+
     const progresso = ((etapaAtual + 1) / etapas.length) * 100;
     const etapa = etapas[etapaAtual];
 
@@ -180,6 +186,84 @@ const Cadastro = () => {
             marginBottom: '30px',
             paddingTop: '20px',
             gap: '20px'
+        },
+
+        overlay: {
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: 'rgba(0, 0, 0, 0.7)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            zIndex: 1000
+        },
+
+        modal: {
+            backgroundColor: '#1B3C83',
+            borderRadius: '20px',
+            padding: '30px',
+            width: '90%',
+            maxWidth: '400px',
+            textAlign: 'center',
+            border: '2px solid #11FF00',
+            position: 'relative'
+        },
+
+        modalTitulo: {
+            fontFamily: "'Cal Sans', sans-serif",
+            fontSize: '24px',
+            color: '#11FF00',
+            marginBottom: '20px'
+        },
+
+        modalTexto: {
+            fontFamily: "'Cal Sans', sans-serif",
+            fontSize: '18px',
+            color: 'white',
+            marginBottom: '30px'
+        },
+
+        modalBotoes: {
+            display: 'flex',
+            gap: '15px',
+            justifyContent: 'center'
+        },
+
+        modalBotaoConfirmar: {
+            backgroundColor: '#FF4548',
+            border: 'none',
+            borderRadius: '50px',
+            padding: '10px 25px',
+            fontFamily: "'Cal Sans', sans-serif",
+            fontSize: '18px',
+            color: 'white',
+            cursor: 'pointer',
+            transition: 'transform 0.2s ease'
+        },
+
+        modalBotaoCancelar: {
+            backgroundColor: '#D9D9D9',
+            border: 'none',
+            borderRadius: '50px',
+            padding: '10px 25px',
+            fontFamily: "'Cal Sans', sans-serif",
+            fontSize: '18px',
+            color: '#1B3C83',
+            cursor: 'pointer',
+            transition: 'transform 0.2s ease'
+        },
+
+        modalFechar: {
+            position: 'absolute',
+            top: '15px',
+            right: '15px',
+            background: 'none',
+            border: 'none',
+            cursor: 'pointer',
+            color: 'white'
         },
         
         botaoSair: {
@@ -394,7 +478,7 @@ const Cadastro = () => {
                 <div style={styles.progressoBarra} />
             </div>
 
-            <button style={styles.botaoSair} onClick={() => navigate('/apresentacao')}> <X size={32} strokeWidth={3} color="white" /> </button>
+            <button style={styles.botaoSair} onClick={() => setShowExitModal(true)}> <X size={32} strokeWidth={3} color="white" /> </button>
         
         </div>
 
@@ -479,7 +563,31 @@ const Cadastro = () => {
             <button style={{...styles.botaoProximo, ...(etapaAtual === 0 && { width: '200px' })}} onClick={avancar} disabled={carregando}> {carregando ? '...' : etapaAtual === etapas.length - 1 ? 'Finalizar' : 'Próximo'} </button>
         
         </div>
+
+        {showExitModal && (
         
+            <div style={styles.overlay}>
+                
+                <div style={styles.modal}>
+                    
+                    <button style={styles.modalFechar} onClick={() => setShowExitModal(false)}> <X size={24} color="white" /> </button>
+                    <div style={styles.modalTitulo}>Atenção!</div>
+                    
+                    <div style={styles.modalTexto}>
+                        Tem certeza que deseja sair do cadastro?<br /> Os dados preenchidos serão perdidos.
+                    </div>
+                    
+                    <div style={styles.modalBotoes}>
+                        <button style={styles.modalBotaoCancelar} onClick={() => setShowExitModal(false)}> Cancelar </button>
+                        <button style={styles.modalBotaoConfirmar} onClick={handleConfirmExit}> Sair </button>
+                    </div>
+
+                </div>
+
+            </div>
+            
+        )}
+
     </div>
     );
 };

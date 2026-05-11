@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 
 import neuroIcon from '../assets/neurodiversidade.png';
@@ -14,6 +14,10 @@ import touretteImg from '../assets/tourette.png';
 const SelecionarNeurodivergencia = () => {
 
     const navigate = useNavigate();
+    const location = useLocation();
+    
+    const origem = location.state?.origem || 'conhecendo-neurodivergencia';
+    const redirectTo = origem === 'atividades' ? '/atividades' : '/conhecendo-neurodivergencia';
 
     const neurodivergencias = [
         { id: 'tea', nome: 'TEA', nomeCompleto: 'Transtorno do Espectro Autista (TEA)', imagem: teaImg },
@@ -28,7 +32,7 @@ const SelecionarNeurodivergencia = () => {
 
     const handleSelecionar = (neuro) => {
         
-        navigate('/conhecendo-neurodivergencia', {
+        navigate(redirectTo, {
             
             state: {
                 trilhaNome: neuro.nome,

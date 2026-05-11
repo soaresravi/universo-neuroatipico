@@ -13,8 +13,8 @@ const MainLayout = () => {
 
     const tabs = [
         { id: 'home', nome: 'Tela inicial', icon: teaImg, rota: '/home' },
-        { id: 'conhecendo-neurodivergencia', nome: 'Conhecendo minha neurodivergência', icon: livroIcon, rota: '/selecionar-neurodivergencia' },
-        { id: 'atividades', nome: 'Atividades', icon: dadosIcon, rota: '/atividades' },
+        { id: 'conhecendo-neurodivergencia', nome: 'Conhecendo minha neurodivergência', icon: livroIcon, rota: '/selecionar-neurodivergencia', state: { origem: 'conhecendo-neurodivergencia' }},
+        { id: 'atividades', nome: 'Atividades', icon: dadosIcon, rota: '/selecionar-neurodivergencia', state: { origem: 'atividades' } },
         { id: 'configuracoes', nome: 'Configurações', icon: configIcon, rota: '/configuracoes' }
     ];
 
@@ -107,7 +107,7 @@ const MainLayout = () => {
                 
                 return (
                 
-                <div key={tab.id} style={{ ...styles.tabItem, ...(isActive ? styles.tabItemActive : {}) }} onClick={() => navigate(tab.rota)}>
+                <div key={tab.id} style={{ ...styles.tabItem, ...(isActive ? styles.tabItemActive : {}) }} onClick={() => navigate(tab.rota, { state: { origem: tab.id === 'conhecendo-neurodivergencia' ? 'conhecendo-neurodivergencia' : 'atividades' } })}>
                     <img src={tab.icon} alt={tab.nome} style={styles.tabIcon} />
                 </div>
                 

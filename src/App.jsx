@@ -12,6 +12,8 @@ import ConhecendoNeurodivergencia from './pages/ConhecendoNeurodivergencia';
 import SelecionarNeurodivergencia from './pages/SelecionarNeurodivergencia';
 import Atividades from './pages/Atividades';
 import Dicas from './pages/Dicas';
+import JogosManuais from './pages/JogosManuais';
+import JogosDigitais from './pages/JogosDigitais';
 import Configuracoes from './pages/Configuracoes';
 
 const AppRoutes = () => {
@@ -114,13 +116,15 @@ function App() {
           <Route element={<MainLayout />}>
             <Route path="/home" element={<Home />} />
             <Route path="/selecionar-neurodivergencia" element={<SelecionarNeurodivergencia /> } />
-            <Route path="/atividades" element={<Atividades />} />
             <Route path="/configuracoes" element={<Configuracoes />} />
           </Route>
 
           <Route path="/trilha/:id" element={<Trilha />} />
           <Route path="/conhecendo-neurodivergencia" element={<ConhecendoNeurodivergencia />} />
+          <Route path="/atividades" element={<Atividades />} />
           <Route path="/dicas" element={<Dicas /> } />
+          <Route path="/jogos-manuais" element={<JogosManuais />} />
+          <Route path="/jogos-digitais" element={<JogosDigitais /> } />
           
           <Route path="/" element={<Navigate to="/apresentacao" replace />} />
           

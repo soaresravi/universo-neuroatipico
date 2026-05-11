@@ -55,7 +55,7 @@ const Trilha = () => {
         
         titulo: {
             fontFamily: "'Atkinson Hyperlegible', sans-serif",
-            fontSize: '21px',
+            fontSize: '19px',
             color: 'white',
             letterSpacing: '3%',
             textShadow: '2px 2px 4px rgba(0,0,0,0.5)',

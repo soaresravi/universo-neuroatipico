@@ -178,7 +178,8 @@ const Cadastro = () => {
             margin: 0,
             position: 'fixed',
             display: 'flex',
-            flexDirection: 'column'
+            flexDirection: 'column',
+            overflow: 'auto'
         },
         
         header: {
@@ -381,7 +382,7 @@ const Cadastro = () => {
         
         balao: {
             position: 'fixed',
-            bottom: '230px',
+            bottom: '100px',
             right: '40px',
             maxWidth: '220px',
             zIndex: 90

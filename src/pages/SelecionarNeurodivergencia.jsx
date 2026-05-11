@@ -74,7 +74,7 @@ const SelecionarNeurodivergencia = () => {
         
         subtitulo: {
             fontFamily: "'Cal Sans', sans-serif",
-            fontSize: '22px',
+            fontSize: '20px',
             color: '#11FF00',
             textShadow: '2px 2px 4px rgba(0,0,0,0.5)',
             marginBottom: '30px',

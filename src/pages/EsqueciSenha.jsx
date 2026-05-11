@@ -91,7 +91,7 @@ const EsqueciSenha = () => {
             textAlign: 'center',
             marginBottom: '30px',
             letterSpacing: '5%',
-            marginTop: '-120px'
+            marginTop: '-180px'
         },
 
         input: {

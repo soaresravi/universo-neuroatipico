@@ -92,7 +92,7 @@ const EsqueciSenha = () => {
             textAlign: 'center',
             marginBottom: '30px',
             letterSpacing: '5%',
-            marginTop: '-280px'
+            marginTop: '-200px'
         },
 
         input: {
@@ -133,7 +133,7 @@ const EsqueciSenha = () => {
 
         balao: {
             position: 'absolute',
-            bottom: '250px',
+            bottom: '200px',
             left: '80px',
             maxWidth: '240px',
             zIndex: 2,
@@ -162,7 +162,7 @@ const EsqueciSenha = () => {
             position: 'absolute',
             bottom: 0,
             left: '-30px',
-            width: '250px',
+            width: '200px',
             height: 'auto',
             zIndex: 1
         }

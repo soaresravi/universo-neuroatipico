@@ -72,13 +72,14 @@ const NovaSenha = () => {
 
         container: {
             backgroundColor: '#1B3C83',
-            minHeight: '100vh',
+            height: '95vw',
+            width: '100vw',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
             padding: '20px',
-            position: 'relative'
+            position: 'fixed'
         },
 
         botaoVoltar: {
@@ -97,7 +98,7 @@ const NovaSenha = () => {
             textAlign: 'center',
             marginBottom: '60px',
             letterSpacing: '8%',
-            marginTop: '-200px'
+            marginTop: '-180px'
         },
 
         input: {
@@ -138,7 +139,7 @@ const NovaSenha = () => {
 
         balao: {
             position: 'absolute',
-            bottom: '250px',
+            bottom: '200px',
             left: '80px',
             maxWidth: '240px',
             zIndex: 2
@@ -167,7 +168,7 @@ const NovaSenha = () => {
             position: 'absolute',
             bottom: 0,
             left: '-30px',
-            width: '250px',
+            width: '200px',
             height: 'auto',
             zIndex: 1
         },

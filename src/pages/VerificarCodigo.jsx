@@ -102,7 +102,7 @@ const VerificarCodigo = () => {
             textAlign: 'center',
             marginBottom: '5px',
             letterSpacing: '8%',
-            marginTop: '-230px'
+            marginTop: '-180px'
         },
 
         subtitulo: {

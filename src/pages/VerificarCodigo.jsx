@@ -76,13 +76,14 @@ const VerificarCodigo = () => {
 
         container: {
             backgroundColor: '#1B3C83',
-            minHeight: '100vh',
+            height: '110vh',
+            width: '100vw',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
             padding: '20px',
-            position: 'relative'
+            position: 'fixed'
         },
 
         botaoVoltar: {
@@ -101,7 +102,7 @@ const VerificarCodigo = () => {
             textAlign: 'center',
             marginBottom: '5px',
             letterSpacing: '8%',
-            marginTop: '-210px'
+            marginTop: '-230px'
         },
 
         subtitulo: {
@@ -164,7 +165,7 @@ const VerificarCodigo = () => {
 
         balao: {
             position: 'absolute',
-            bottom: '250px',
+            bottom: '200px',
             left: '80px',
             maxWidth: '240px',
             zIndex: 2
@@ -193,7 +194,7 @@ const VerificarCodigo = () => {
             position: 'absolute',
             bottom: 0,
             left: '-30px',
-            width: '250px',
+            width: '200px',
             height: 'auto',
             zIndex: 1
         }

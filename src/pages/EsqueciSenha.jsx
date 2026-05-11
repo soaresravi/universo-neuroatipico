@@ -66,7 +66,7 @@ const EsqueciSenha = () => {
 
         container: {
             backgroundColor: '#1B3C83',
-            height: '100vh',
+            height: '110vh',
             width: '100vw',
             display: 'flex',
             flexDirection: 'column',

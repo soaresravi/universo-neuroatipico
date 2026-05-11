@@ -172,9 +172,11 @@ const Cadastro = () => {
             backgroundImage: `url(${fundoCadastro})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            minHeight: '100vh',
+            height: '100vh',
+            width: '100vw',
             padding: '20px',
-            position: 'relative',
+            margin: 0,
+            position: 'fixed',
             display: 'flex',
             flexDirection: 'column'
         },

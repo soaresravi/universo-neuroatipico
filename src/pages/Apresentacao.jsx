@@ -14,10 +14,10 @@ const Apresentacao = () => {
             backgroundPosition: 'center',
             height: '100vh',
             width: '100vw',
-            position: 'relative',
+            position: 'fixed',
             margin: 0,
             padding: 0,
-            overflow: 'hidden'
+            overflow: 'auto'
         },
 
         titulo: {

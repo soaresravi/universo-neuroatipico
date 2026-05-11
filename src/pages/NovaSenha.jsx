@@ -72,7 +72,7 @@ const NovaSenha = () => {
 
         container: {
             backgroundColor: '#1B3C83',
-            height: '95vw',
+            height: '100vh',
             width: '100vw',
             display: 'flex',
             flexDirection: 'column',

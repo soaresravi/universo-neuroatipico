@@ -66,13 +66,14 @@ const EsqueciSenha = () => {
 
         container: {
             backgroundColor: '#1B3C83',
-            minHeight: '100vh',
+            height: '100vh',
+            width: '100vw',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
             padding: '20px',
-            position: 'relative'
+            position: 'fixed'
         },
 
         botaoVoltar: {
@@ -91,7 +92,7 @@ const EsqueciSenha = () => {
             textAlign: 'center',
             marginBottom: '30px',
             letterSpacing: '5%',
-            marginTop: '-180px'
+            marginTop: '-260px'
         },
 
         input: {

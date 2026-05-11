@@ -5,6 +5,9 @@ import { supabase, AuthProvider } from './contexts/AuthContext';
 import MainLayout from './pages/MainLayout';
 import Apresentacao from './pages/Apresentacao';
 import Login from './pages/Login';
+import EsqueciSenha from './pages/EsqueciSenha';
+import VerificarCodigo from './pages/VerificarCodigo';
+import NovaSenha from './pages/NovaSenha';
 import Cadastro from './pages/Cadastro';
 import Home from './pages/Home';
 import Trilha from './pages/Trilha';
@@ -111,6 +114,9 @@ function App() {
           
           <Route path="/apresentacao" element={<Apresentacao />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/esqueci-senha" element={<EsqueciSenha />} />
+          <Route path="/verificar-codigo" element={<VerificarCodigo />} />
+          <Route path="/nova-senha" element={<NovaSenha />} />
           <Route path="/cadastro" element={<Cadastro />} />
 
           <Route element={<MainLayout />}>

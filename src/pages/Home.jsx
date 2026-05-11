@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
+import { supabase, useAuth } from '../contexts/AuthContext';
 
 import teaImg from '../assets/autismo.png';
 import neuroIcon from '../assets/neurodiversidade.png';
@@ -15,8 +15,35 @@ const Home = () => {
 
     const navigate = useNavigate();
     const { user } = useAuth();
+    const [nome, setNome] = useState('Usuário');
 
-    const nome = user?.user_metaData?.nome || user?.email?.split('@')[0] || 'Usuário';
+    useEffect(() => {
+
+        const buscarNomeUsuario = async () => {
+
+            if (!user?.email) return;
+
+            try {
+
+                const { data, error } = await supabase.from('usuarios').select('nome').eq('email', user.email).single();
+
+                if (data && !error) {
+                    setNome(data.nome);
+                } else {
+                    const fallbackNome = user?.user_metadata?.nome || user?.email?.split('@')[0] || 'Usuário';
+                    setNome(fallbackNome);
+                }
+
+            } catch (error) {
+                console.log('Erro ao buscar nome:', error);
+                setNome(user?.email?.split('@')[0] || 'Usuário');
+            }
+
+        };
+
+        buscarNomeUsuario();
+
+    }, [user]);
 
     const trilhas = [
         { id: 'tea', nome: 'TEA', nomeCompleto: 'Transtorno do Espectro Autista (TEA)', imagem: teaImg },

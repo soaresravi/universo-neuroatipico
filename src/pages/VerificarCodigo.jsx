@@ -76,7 +76,7 @@ const VerificarCodigo = () => {
 
         container: {
             backgroundColor: '#1B3C83',
-            height: '110vh',
+            height: '100vh',
             width: '100vw',
             display: 'flex',
             flexDirection: 'column',
